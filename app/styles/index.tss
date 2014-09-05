@@ -1,0 +1,11 @@
+".container": {
+	backgroundColor:"#aaa"
+},
+"WebView":{
+	borderWidth:5,
+	borderColor:"#c00",
+	width:Ti.UI.FILL,
+	height:Ti.UI.FILL,
+	top:0,
+	enableZoomControls:'false'
+}

@@ -1,0 +1,7 @@
+<Alloy>
+	<Window class="container">
+		<ScrollView id="scrollView" showVerticalScrollIndicator="true" showHorizontalScrollIndicator="true" width="100%">
+			<WebView url="/zoom/index.html"/>
+		</ScrollView>>
+	</Window>
+</Alloy>

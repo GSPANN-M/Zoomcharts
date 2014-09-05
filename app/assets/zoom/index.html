@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+		<title>Sample Zoom Charts</title>
+		<script type="text/javascript" src="lib/zoomcharts.js" ></script>
+	</head>
+	<body>
+		<div id="demo"></div>
+		<script type="text/javascript">
+			var docWidth = window.innerWidth - 5;
+			var docHeight = window.innerHeight - 5;
+			window.onresize= function(){
+		    	document.getElementById("demo").style.height = docHeight + 'px';
+		    	document.getElementById("demo").style.top = 0;
+		    	var c = document.getElementById('demo');
+		    	c.style.top = 0;
+		    	c.style.width = '100%';
+			};
+		    setTimeout(function(){
+		    	var c = document.getElementById('demo');
+		    	c.style.top = 0;
+		    	c.style.width = '100%';
+		    }, 300);
+		    		
+		    var t = new NetChart({
+		        container: document.getElementById("demo"),
+		        height: docHeight,
+		        data:
+		        {
+		            url: "./data.json"
+		        },
+		        navigation:{
+		            initialNodes:["m-1"],
+		            mode:"manual"
+		        },
+				style:{
+				    nodeRules:{"rule1":nodeStyle},
+				    linkRules:{"rule1":linkStyle},
+				    makeImagesCircular: true
+				}
+		    });
+		    function nodeStyle(node){
+				var image = null;
+				node.image = "./appicon.png";
+				node.label = node.data.name;
+				node.fillColor = "#3EC1FF";
+				
+			}
+			function linkStyle(link){
+				link.fillColor = "#0E9BDD";
+			}
+		    
+		</script>
+	</body>
+</html>
